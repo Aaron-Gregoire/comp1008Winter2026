@@ -55,5 +55,4 @@ Create Store class
         getProductByName(name) => price of Product
         getTotalValueOfProducts => sum of all Product prices
 
-
-testinggggggg
+testing github commits for this project
