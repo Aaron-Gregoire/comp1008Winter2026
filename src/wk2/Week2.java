@@ -67,7 +67,8 @@ public class Week2 {
             return;  //end the method execution
         }
         int age = Integer.parseInt(answer);
-
+        //parseing turns data type to another so in this instance turning answer into an integer
+        //Parsing is to read the value of one object to convert it to another type.
         if(age < 5) System.out.println("Enfant");
         else if(age < 13)
             System.out.println("Child");
