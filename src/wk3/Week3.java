@@ -31,5 +31,12 @@ public class Week3 {
   //      System.out.println(c.getNumEmployees());
  //       System.out.println(c.getLowestSalary());
  //       System.out.println(c.getHighestSalary());
+        Store store = new Store(5);
+
+        store.addProduct(new Product(101, "Laptop", 1299.99));
+        store.addProduct(new Product(102, "Mouse", 24.99));
+        store.addProduct(new Product(103, "Keyboard", 89.50));
+        System.out.println("Number of products: " + store.getNumberOfProducts());
+        System.out.printf("Total value: $%.2f%n", store.getTotalValueOfProducts());
     }
 }
