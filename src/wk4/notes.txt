@@ -1,0 +1,16 @@
+enum:
+enumerable/enumerator
+array of constant values
+drop down list of values
+enum Station first letter capital
+all values in the enum are capital
+
+factory methods
+a category of that class
+creates new instance of the object with preset values
+
+
+no const in java use final
+
+unit testing
+
