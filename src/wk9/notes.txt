@@ -1,0 +1,18 @@
+inheritance
+
+create new class based off an older class
+
+will have all old features, but you can add new features
+
+inherit all non-private stuff
+
+cannot remove anything from previous version, but you can over-ride method behavior
+
+older class           new class
+
+parent                child
+super                 sub
+base                  derived
+
+
+
