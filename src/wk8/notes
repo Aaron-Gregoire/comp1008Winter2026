@@ -1,0 +1,125 @@
+========================================
+  CHAPTER 15 - FILE MANIPULATION NOTES
+========================================
+
+--- WHY USE FILES? ---
+- Data stored in variables is TEMPORARY (lost when program ends or variable goes out of scope)
+- Files allow LONG-TERM (persistent) data storage
+- Data in files exists beyond the duration of program execution
+
+--- FILES & STREAMS ---
+- Files are viewed as a sequential stream of bytes
+- Every OS has a way to detect End Of File (EOF)
+  - EOF is either a marker or a total byte count
+- Two types of files:
+  1. TEXT files   - every character is two bytes
+  2. BINARY files - data stored in raw binary format
+- Bit to Byte conversion:
+  - 8 bits = 1 byte
+  - 1 bit  = 0.125 bytes
+
+--- BINARY FILE SIZES ---
+- char   = 2 bytes
+- int    = 4 bytes
+- double = 8 bytes
+- Binary files must be read by programs that understand their specific format/ordering
+
+--- JAVA FILE PACKAGES ---
+- java.io         - original file I/O package
+- java.nio        - newer, improved file I/O package
+- java.util.Formatter - outputs data to any text-based stream (like System.out.printf)
+- java.util.Scanner   - reads input from keyboard OR from a file
+
+--- NIO: PATH & PATHS ---
+- Path  (interface) - stores a file/directory location
+- Paths (class)     - has static method get() to retrieve a Path object
+  Example:
+    Path path = Paths.get("path/to/dir");
+
+--- NIO: FILES CLASS ---
+- Provides static methods for common file/directory operations:
+  - Copying files
+  - Creating and deleting files and directories
+  - Getting file/directory information
+  - Reading the contents of files
+
+--- FILE CLASS (java.io.File) ---
+- Represents a file or directory path name
+- Preferred when performing MORE THAN ONE operation on a file/directory
+- Useful File class methods:
+  - canRead()          - checks if file is readable
+  - canWrite()         - checks if file is writable
+  - createNewFile()    - creates a new empty file
+  - mkdir()            - creates a new directory
+  - delete()           - deletes the file or directory
+  - exists()           - checks if the file exists (returns true/false)
+  - getName()          - returns the name of the file
+  - getAbsolutePath()  - returns the full path of the file
+  - length()           - returns the size of the file in bytes
+  - list()             - returns a String[] of files and directories
+
+--- READING FROM FILES ---
+
+FileReader:
+- Reads characters (NOT bytes) from a file
+- Intended for reading TEXT files
+- May throw FileNotFoundException
+- Always call close() when finished
+  Example:
+    FileReader fr = new FileReader("input.txt");
+
+BufferedReader:
+- Wraps a FileReader for faster, efficient reading
+- Reads large blocks of data at once (default: 4 or 8 KB)
+- Block reading is much faster for disk access and large files
+- Reads characters (text)
+- Use readLine() to read one line at a time
+  Example:
+    BufferedReader br = new BufferedReader(new FileReader("input.txt"));
+    String line;
+    while ((line = br.readLine()) != null) {
+        System.out.println(line);
+    }
+    br.close();
+
+--- WRITING TO FILES ---
+
+FileWriter:
+- Writes characters (NOT bytes) to a file
+- Intended for writing TEXT files
+- Always call close() when finished
+  Example:
+    FileWriter fw = new FileWriter("output.txt");
+    fw.write("Hello, Java!");
+    fw.close();
+
+BufferedWriter:
+- Wraps a FileWriter for faster, efficient writing
+- Writes large blocks of data at once (default: 4 or 8 KB)
+- Block writing is much faster for disk access and large files
+- Writes characters (text)
+  Example:
+    BufferedWriter bw = new BufferedWriter(new FileWriter("output.txt"));
+    bw.write("Hello, Java!");
+    bw.newLine();
+    bw.close();
+
+--- QUICK REFERENCE SUMMARY ---
+
+| Class          | Purpose                        | Read/Write |
+|----------------|--------------------------------|------------|
+| FileReader     | Read text from a file          | Read       |
+| BufferedReader | Fast buffered text reading     | Read       |
+| FileWriter     | Write text to a file           | Write      |
+| BufferedWriter | Fast buffered text writing     | Write      |
+| File           | File/directory info & methods  | Both       |
+| Scanner        | Read text from file or console | Read       |
+
+--- IMPORTANT REMINDERS ---
+- Always close() your readers and writers when done
+- Use try-catch blocks to handle IOException and FileNotFoundException
+- Buffered classes are faster than non-buffered for large files
+- Text files store data as characters; binary files store raw binary data
+- Use exists() before reading a file to avoid errors
+
+========================================
