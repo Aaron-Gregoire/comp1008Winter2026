@@ -1,0 +1,47 @@
+two players playing against each other
+    player 1 regular player
+    player 2 dealer
+
+    -diff between regular player and dealer: when dealer has sum of cards of 17 they must stay at that value (dealer cant hit on 17)
+
+
+
+    -players cycle thru deck of cards deck has 52 cards
+    -each card has a suit and a rank and a value (aces automatically 11)
+    -a suit is one of values: hearts, clubs, diamonds, spades.
+
+
+    -player gets two cards
+        -has to decide to hit or stand
+        -hit means they get a crad in deck
+        -stand means they dont
+
+    -dealer gets two cards
+        - had to decide to hit or stand
+        -however must stand on a 17
+
+        class Player{}
+
+        class Dealer{}
+
+        abstract class Participant{}
+
+        class Card{}
+            private String suit, rank;
+            private int value;
+
+            public String getSuit(){
+                return suit;
+            }
+            public String getRank(){
+                return rank;
+            }
+            public int getValue(){
+                return value;
+            }
+
+        interface Rules{}
+            methods:
+            void hit();
+            void stand();
+            boolean canPlay();
