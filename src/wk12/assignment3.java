@@ -1,4 +1,4 @@
-package wk12;
+/*package wk12;
 import java.io.*;
 import java.util.Scanner;
 

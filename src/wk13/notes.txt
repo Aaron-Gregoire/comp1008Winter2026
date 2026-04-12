@@ -1,0 +1,28 @@
+car
+truck
+motorcycle
+
+
+license: interface
+    getLicenseType String
+    canDrive(String vehicleType) bool
+    licenseIsSuspended() bool
+
+
+Vehicle
+    attributes
+        (priv) numWheels
+        (priv) motorType String
+        (private) speed (double)
+        (private) engineRunning (bool)
+    actions
+       (public) moving(direction) abstract void
+       (public) turnOn void
+      (public)  turnOff void
+      getters and setters for 4 instance variables
+
+      order to create
+      1. interface (least dynamic)
+      2. abstract class (grouping of all common factors)
+      3.
+      4.
