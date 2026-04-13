@@ -1,0 +1,13 @@
+Interface Transactable — defines the contract: deposit(), withdraw(), getBalance()
+
+Abstract class BankAccount implements Transactable — holds shared fields (owner, accountNumber, balance), concrete deposit(), leaves withdraw() abstract
+
+Concrete SavingsAccount — overrides withdraw(): enforces minimum balance of $100
+
+Concrete ChequingAccount — overrides withdraw(): allows overdraft up to $500, charges $5 fee
+
+Concrete LoanAccount — overrides withdraw(): disallows withdrawals, only payments
+
+Runner — creates all 3 as BankAccount[], calls same methods, different behaviour at runtime
+
+Key polymorphism — BankAccount acc = new SavingsAccount(...) upcasting; loop calls withdraw() polymorphically

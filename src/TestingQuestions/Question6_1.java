@@ -1,6 +1,6 @@
 package TestingQuestions;
 
-// Question 6.1 - Car class with getters and setters
+// Question 6.1 - wk13.Car class with getters and setters
 class Car {
     private String brand;
     private int year;
@@ -20,14 +20,14 @@ public class Question6_1 {
     public static void main(String[] args) {
         Car car = new Car("Toyota", 2022);
         
-        System.out.println("Car Details:");
+        System.out.println("wk13.Car Details:");
         System.out.println("Brand: " + car.getBrand());
         System.out.println("Year: " + car.getYear());
         
         car.setBrand("Honda");
         car.setYear(2023);
         
-        System.out.println("\nUpdated Car Details:");
+        System.out.println("\nUpdated wk13.Car Details:");
         System.out.println("Brand: " + car.getBrand());
         System.out.println("Year: " + car.getYear());
     }

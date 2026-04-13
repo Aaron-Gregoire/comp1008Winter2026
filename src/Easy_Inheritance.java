@@ -2,19 +2,7 @@
 // EASY INHERITANCE EXERCISES (1-10)
 // ============================================================
 
-// ----- Exercise 1: Vehicle -> Car -----
-class Vehicle {
-    void start() {
-        System.out.println("Vehicle is starting...");
-    }
-}
 
-class Car extends Vehicle {
-    public static void main_E1(String[] args) {
-        Car car = new Car();
-        car.start();
-    }
-}
 
 // ----- Exercise 2: Animal -> Dog (eat) -----
 class Animal {
@@ -157,8 +145,7 @@ class WashingMachine extends Appliance {
 // ============================================================
 public class Easy_Inheritance {
     public static void main(String[] args) {
-        System.out.println("=== Exercise 1 ===");
-        Car.main_E1(args);
+
 
         System.out.println("\n=== Exercise 2 ===");
         Dog.main_E2(args);

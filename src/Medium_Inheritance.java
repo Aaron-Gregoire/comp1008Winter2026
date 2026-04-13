@@ -33,7 +33,7 @@ class M3_Manager extends M3_Employee {
     @Override double calculateSalary() { return salary + bonus; }
 }
 
-// ----- M4: Vehicle -> Car (speed, gear) -----
+// ----- M4: wk13.Vehicle -> wk13.Car (speed, gear) -----
 class M4_Vehicle {
     int speed = 100;
     void displaySpeed() { System.out.println("Speed: " + speed + " km/h"); }
@@ -129,10 +129,10 @@ class M11_Teacher extends M11_Person {
     }
 }
 
-// ----- M12: Vehicle -> Bike (override start) -----
+// ----- M12: wk13.Vehicle -> Bike (override start) -----
 class M12_Vehicle {
-    void start() { System.out.println("Vehicle starting."); }
-    void stop()  { System.out.println("Vehicle stopping."); }
+    void start() { System.out.println("wk13.Vehicle starting."); }
+    void stop()  { System.out.println("wk13.Vehicle stopping."); }
 }
 class M12_Bike extends M12_Vehicle {
     @Override void start() { System.out.println("Bike starting with a kick."); }
@@ -186,7 +186,7 @@ class M16_Laptop extends M16_Device {
     }
 }
 
-// ----- M17: Vehicle -> Car -> ElectricCar (multilevel attributes) -----
+// ----- M17: wk13.Vehicle -> wk13.Car -> ElectricCar (multilevel attributes) -----
 class M17_Vehicle {
     String make = "Tesla";
 }
@@ -241,7 +241,7 @@ public class Medium_Inheritance {
         System.out.println("\n=== M3: Manager Salary ===");
         System.out.println("Manager total: " + new M3_Manager().calculateSalary());
 
-        System.out.println("\n=== M4: Car Speed & Gear ===");
+        System.out.println("\n=== M4: wk13.Car Speed & Gear ===");
         M4_Car car = new M4_Car();
         car.displaySpeed();
         car.displayGear();

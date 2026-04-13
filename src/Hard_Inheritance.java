@@ -47,7 +47,7 @@ class H2_CollegeStudent extends H2_Student {
     }
 }
 
-// ----- H3: Vehicle -> Car -> ElectricCar (speed, fuel, gear, batteryLevel) -----
+// ----- H3: wk13.Vehicle -> wk13.Car -> ElectricCar (speed, fuel, gear, batteryLevel) -----
 class H3_Vehicle {
     int speed; String fuel;
     H3_Vehicle(int speed, String fuel) { this.speed = speed; this.fuel = fuel; }
@@ -219,14 +219,14 @@ class H11_Director extends H11_Manager {
     @Override double totalCompensation() { return salary + bonus + stockOptions; }
 }
 
-// ----- H12: Vehicle -> Car -> SportsCar (override start/stop) -----
+// ----- H12: wk13.Vehicle -> wk13.Car -> SportsCar (override start/stop) -----
 class H12_Vehicle {
-    void start() { System.out.println("Vehicle: starting engine."); }
-    void stop()  { System.out.println("Vehicle: stopping engine."); }
+    void start() { System.out.println("wk13.Vehicle: starting engine."); }
+    void stop()  { System.out.println("wk13.Vehicle: stopping engine."); }
 }
 class H12_Car extends H12_Vehicle {
-    @Override void start() { System.out.println("Car: turning ignition key."); }
-    @Override void stop()  { System.out.println("Car: applying brakes."); }
+    @Override void start() { System.out.println("wk13.Car: turning ignition key."); }
+    @Override void stop()  { System.out.println("wk13.Car: applying brakes."); }
 }
 class H12_SportsCar extends H12_Car {
     @Override void start() { System.out.println("SportsCar: ROAR! Engine starts."); }
@@ -358,12 +358,12 @@ class H17_Director extends H17_Manager {
     @Override void displayDetails() { super.displayDetails(); System.out.println("  Region: " + region); }
 }
 
-// ----- H18: Vehicle -> Car, Bike, Truck (override rent) -----
+// ----- H18: wk13.Vehicle -> wk13.Car, Bike, Truck (override rent) -----
 class H18_Vehicle {
     void rent() { System.out.println("Renting a vehicle."); }
 }
 class H18_Car extends H18_Vehicle {
-    @Override void rent() { System.out.println("Renting a Car: $50/day."); }
+    @Override void rent() { System.out.println("Renting a wk13.Car: $50/day."); }
 }
 class H18_Bike extends H18_Vehicle {
     @Override void rent() { System.out.println("Renting a Bike: $15/day."); }
@@ -491,7 +491,7 @@ public class Hard_Inheritance {
         System.out.println("Manager:  " + m.totalCompensation());
         System.out.println("Director: " + d.totalCompensation());
 
-        System.out.println("\n=== H12: Vehicle -> Car -> SportsCar ===");
+        System.out.println("\n=== H12: wk13.Vehicle -> wk13.Car -> SportsCar ===");
         H12_SportsCar sc = new H12_SportsCar();
         sc.start(); sc.stop();
 
@@ -523,7 +523,7 @@ public class Hard_Inheritance {
         System.out.println("\n=== H17: Person->Employee->Manager->Director displayDetails ===");
         new H17_Director("James", 150000, "Engineering", "North America").displayDetails();
 
-        System.out.println("\n=== H18: Vehicle Rental System ===");
+        System.out.println("\n=== H18: wk13.Vehicle Rental System ===");
         H18_Vehicle[] rentals = { new H18_Car(), new H18_Bike(), new H18_Truck() };
         for (H18_Vehicle v : rentals) v.rent();
 

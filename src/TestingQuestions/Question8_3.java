@@ -2,7 +2,7 @@ package TestingQuestions;
 
 import java.util.Scanner;
 
-// Question 8.3 - Car rental eligibility
+// Question 8.3 - wk13.Car rental eligibility
 public class Question8_3 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

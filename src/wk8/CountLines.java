@@ -11,7 +11,7 @@ public class CountLines {
 
         try {
             // Wrap FileReader in BufferedReader for faster block reading
-            BufferedReader reader = new BufferedReader(new FileReader("notes.txt"));
+            BufferedReader reader = new BufferedReader(new FileReader("wk13/notes.txt"));
 
             // Read through each line — each successful read means one line exists
             while (reader.readLine() != null) {

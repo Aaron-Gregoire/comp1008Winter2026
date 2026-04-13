@@ -1,48 +1,49 @@
 package wk13;
 
-public abstract class Vehicle implements License{
-    private int numWheels;
-    private String motorType = "v1";
-    private double speed;
-    private boolean engineRunning;
-    private String licenceType;
-    boolean isValidLicense;
+public abstract class Vehicle implements License {
+
+        private int numWheels;
+        private String motorType = "v1";
+        private double speed;
+        private boolean engineRunning;
+        private String licenseType;
+        private boolean hasValidLicense;
+
+        public Vehicle(String motorType, int numWheels) {
+            setMotorType(motorType);
+            setNumWheels(numWheels);
+        }
+        @Override
+        public String getLicenseType() {
+            return licenseType;
+        }
+        public void setLicenseType(String licenseType) {
+            this.licenseType = licenseType;
+        }
+        @Override
+        public boolean isLicenseSuspended(){
+            return !hasValidLicense;
+        }
 
 
-    public Vehicle(String motorType, int numWheels, String licenseType){
-    }
-    @Override
-    public String getLicenceType() {
-        return licenceType;
-    }
-    public void getLicenseType(String licenceType){
-        this.licenceType = licenceType;
-    }
+        public abstract void moving(String direction);
+        public void turnOn(){
+            engineRunning = true;
+        }
 
-    @Override
-    public boolean isLicenseSuspended(){
-        return isValidLicense;
-    }
-
-    public abstract void moving(String direction);
-    public void turnOn(){
-        engineRunning = true;
-    }
-    public void turnOff(){
-        engineRunning = false;
-    }
-    public boolean isEngineRunning() {
-        return engineRunning;
-    }
+        public void turnOff(){
+            engineRunning = false;
+        }
 
     public int getNumWheels() {
         return numWheels;
     }
 
     public void setNumWheels(int numWheels) {
-       if(numWheels > 2 || numWheels > 4)
-        throw new IllegalArgumentException("number of wheels between 2 and 4");
-       this.numWheels = numWheels;
+            if(numWheels < 2 || numWheels > 4)
+                throw new IllegalArgumentException("numWheels must be between 2 and 4");
+
+        this.numWheels = numWheels;
     }
 
     public String getMotorType() {
@@ -54,16 +55,13 @@ public abstract class Vehicle implements License{
     }
 
     public double getSpeed() {
-       if(speed > 0)
-           throw new IllegalArgumentException("speed cannot be negative");
-       return speed;
+        return speed;
     }
 
     public void setSpeed(double speed) {
+            if(speed < 0 || speed > 300)
+                throw new IllegalArgumentException("speed must be between 0 and 300");
         this.speed = speed;
     }
 
-    public void setEngineRunning(boolean engineRunning) {
-        this.engineRunning = engineRunning;
-    }
 }
